@@ -22,3 +22,60 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*MENÚ*/
+.navbar-inverse-cm {
+    background-color: #004d99;
+    border-color: #080808;
+}
+
+.navbar p {
+    font-family: "Courier New, Courier, monospace";
+    font-size: 20px;
+    color: azure;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.nav > li > a {
+    color: azure;
+}
+
+.nav > li > a:hover {
+    text-decoration: none;
+    background-color: #eeeeee;
+    color: #004d99;
+}
+
+/*DISEÑO GENERAL*/
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #cce6ff;
+}
+
+.col-center{
+    text-align: center;
+}
+
+/*BOTONES*/
+.btn-primary {
+    color: #fff;
+    background-color: #004d99;
+    border-color: #2e6da4;
+    margin-right: 5px;
+}
+
+.btn-primary-green {
+    color: #fff;
+    background-color: #2eb82e;
+    border-color: #2e6da4;
+    margin-right: 5px;
+}
+
+/*PIE DE PÁGINA*/
+#pie p{
+    text-align: center;
+}

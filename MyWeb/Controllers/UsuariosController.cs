@@ -15,24 +15,17 @@ namespace MyWeb.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult ValidarUsuario(string email, string pass)
+        [HttpPost]
+        public ActionResult ValidarUsuario(Usuario usuario)
         {
-            Usuario usuario = new Usuario()
+            if (ModelState.IsValid)
             {
-                Id = 1,
-                Nombre = "Cristian",
-                Apellido = "Manavella",
-                Email = "crismanavella@gmail.com",
-                Password = "Mana5692"
-            };
-            JsonResult retorno = new JsonResult
+                return new HomeController().Index();
+            }
+            else
             {
-                JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-                Data = usuario
-            };
-
-            return retorno;
+                return View();
+            }
         }
     }
 }

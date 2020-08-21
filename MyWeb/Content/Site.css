@@ -79,3 +79,21 @@ textarea {
 #pie p{
     text-align: center;
 }
+
+/*VENTANAS MODALES*/
+.modal-header-cm {
+    background-color: #004d99;
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-title-cm {
+    margin: 0;
+    line-height: 1.42857143;
+    color: azure;
+    font-weight: bold;
+}
+
+.modal-dialog{
+    width: 300px;
+}

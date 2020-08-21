@@ -9,6 +9,34 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <!--Seteo la ventana Modal para Inicio de Sesión-->
+    <div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header-cm">
+                    <h5 class="modal-title-cm">Inicia Sesión</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="user-email">E-Mail</label>
+                            <input type="email" class="form-control" id="user-email" placeholder="nombre@dominio.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Contraseña</label>
+                            <input type="password" class="form-control" id="pass">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Iniciar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Continúa el código normal del diseño de la Pagina-->
     <div class="navbar navbar-inverse-cm navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">

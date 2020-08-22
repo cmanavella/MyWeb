@@ -17,9 +17,9 @@
                 <div class="modal-header-cm">
                     <h5 class="modal-title-cm">Inicia Sesión</h5>
                 </div>
-                <div class="modal-body">
-                    @using (Html.BeginForm("ValidarUsuario", "Usuarios", FormMethod.Post))
-                    {
+                @*@using (Html.BeginForm("ValidarUsuario", "Usuarios", FormMethod.Post, new { id= "frmSignIn" })){*@
+                <form id="frmSignIn">
+                    <div class="modal-body">
                         @Html.AntiForgeryToken()
                         <div class="form-group">
                             @Html.LabelFor(x => x.Email)
@@ -30,11 +30,15 @@
                             @Html.LabelFor(x => x.Password)
                             @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
                             @Html.ValidationMessageFor(x => x.Password, null, new { @class = "text-danger" })
+                            @Html.ValidationMessage("custom-validation", new { @class = "text-danger", id = "signin-validation" })
                         </div>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary" id="btnValidarSignIn">Iniciar</button>
-                    }
-                </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary" id="btnValidarSignIn">Iniciar</button>
+                        </div>
+                    </div>
+                </form>
+                @* }*@
             </div>
         </div>
     </div>
@@ -68,6 +72,8 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery-form")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/funciones")
     @RenderSection("scripts", required: false)

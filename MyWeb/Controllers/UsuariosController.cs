@@ -16,16 +16,34 @@ namespace MyWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult ValidarUsuario(Usuario usuario)
+        public JsonResult ValidarUsuario(Usuario usuario)
         {
+            var respuesta = new Response
+            {
+                Valida = false,
+                Modelo = null,
+                Error = "El E-Mail y/o la Contraseña son incorrectos."
+            };
+
             if (ModelState.IsValid)
             {
-                return new HomeController().Index();
+                if(usuario.Email=="crismanavella@gmail.com" && usuario.Password == "Mana5692")
+                {
+                    Usuario usuarioToSend = new Usuario{
+                        Id = 1,
+                        Nombre = "Cristian",
+                        Apellido = "Manavella",
+                        Email = usuario.Email,
+                        Password = usuario.Password
+                };
+
+                    respuesta.Valida = true;
+                    respuesta.Modelo = usuarioToSend;
+                    respuesta.Error = "";
+                }
             }
-            else
-            {
-                return View();
-            }
+
+            return Json(respuesta);
         }
     }
 }

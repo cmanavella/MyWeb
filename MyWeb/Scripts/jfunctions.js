@@ -1,10 +1,10 @@
 ﻿$(document).ready(function(){
-    $('#btnValidarSignIn').click(function () {
+    //$('#btnValidarSignIn').click(function () {
         //var email = $('#user-email').val();
         //var pass = $('#user-pass').val();
         //var form = document.getElementsByTagName('frmSignIn');
 
-        alert('Hola Mundo');
+        //alert('Hola Mundo');
         
 
         //$.ajax({
@@ -17,28 +17,31 @@
         //        alert(response.d);
         //    }
         //});
-    });
-
-    //$('#frmSignIn').submit(function () {
-    //    var form = $(this);
-    //    alert('Hola mundo');
-
-        //if (form.validate()) {
-            //form.ajaxSubmit({
-            //    dataType: 'JSON',
-            //    type: 'POST',
-            //    url: form.attr('action'),
-            //    success: function (r) {
-            //        if (r.Valida) {
-            //            alert('Bienvenido ' + r.Object.Nombre + ' ' + r.Object.Apellido + ' a nuestro sitio.');
-            //        } else {
-            //            $('#signin-validation').text(r.Error).show();
-            //        }
-            //    },
-            //    error: function (jqXHR, textStatus, errorThrown) {
-            //        alert(errorThrown);
-            //    }
-            //});
-        //}
     //});
+
+    $('#frmSignIn').submit(function () {
+        var form = $(this);
+
+        form.validate();
+        if (form.valid()) {
+            form.ajaxSubmit({
+                dataType: 'JSON',
+                type: 'POST',
+                url: form.attr('action'),
+                success: function (r) {
+                    if (r.Valida) {
+                        alert('Bienvenido ' + r.Modelo.Nombre + ' ' + r.Modelo.Apellido + ' a nuestro sitio.');
+                        $('#Email').val('');
+                        $('#Password').val('');
+                    } else {
+                        $('#signin-validation').text(r.Error).show();
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+        }
+        return false;
+    });
 });

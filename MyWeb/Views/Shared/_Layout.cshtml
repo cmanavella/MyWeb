@@ -17,8 +17,8 @@
                 <div class="modal-header-cm">
                     <h5 class="modal-title-cm">Inicia Sesión</h5>
                 </div>
-                @*@using (Html.BeginForm("ValidarUsuario", "Usuarios", FormMethod.Post, new { id= "frmSignIn" })){*@
-                <form id="frmSignIn">
+                @using (Html.BeginForm("ValidarUsuario", "Usuarios", FormMethod.Post, new { id= "frmSignIn" })){
+                @*<form id="frmSignIn">*@
                     <div class="modal-body">
                         @Html.AntiForgeryToken()
                         <div class="form-group">
@@ -34,11 +34,11 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary" id="btnValidarSignIn">Iniciar</button>
+                            <button type="submit" class="btn btn-primary">Iniciar</button>
                         </div>
                     </div>
-                </form>
-                @* }*@
+                @*</form>*@
+                 }
             </div>
         </div>
     </div>

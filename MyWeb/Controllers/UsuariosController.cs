@@ -35,7 +35,7 @@ namespace MyWeb.Controllers
                         Apellido = "Manavella",
                         Email = usuario.Email,
                         Password = usuario.Password
-                };
+                    };
 
                     respuesta.Valida = true;
                     respuesta.Modelo = usuarioToSend;

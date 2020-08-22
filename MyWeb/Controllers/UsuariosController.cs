@@ -18,6 +18,8 @@ namespace MyWeb.Controllers
         [HttpPost]
         public JsonResult ValidarUsuario(Usuario usuario)
         {
+            //Cargo la variable respuesta que será devuelta mediante el uso de JSon. Es una instancia al Modelo
+            //Response usado para devolver datos con JSon.
             var respuesta = new Response
             {
                 Valida = false,
@@ -25,8 +27,10 @@ namespace MyWeb.Controllers
                 Error = "El E-Mail y/o la Contraseña son incorrectos."
             };
 
+            //Vuelvo a preguntar si el Formulario se encuentra validado.
             if (ModelState.IsValid)
             {
+                //Acá es donde tengo que buscar si el usuario ingresado existe en la BD.
                 if(usuario.Email=="crismanavella@gmail.com" && usuario.Password == "Mana5692")
                 {
                     Usuario usuarioToSend = new Usuario{
@@ -43,6 +47,7 @@ namespace MyWeb.Controllers
                 }
             }
 
+            //Retorno el JSon.
             return Json(respuesta);
         }
     }

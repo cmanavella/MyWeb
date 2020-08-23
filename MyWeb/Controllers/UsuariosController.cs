@@ -15,8 +15,14 @@ namespace MyWeb.Controllers
             return View();
         }
 
+        public ActionResult SignOut()
+        {
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
+        }
+
         [HttpPost]
-        public JsonResult ValidarUsuario(Usuario usuario)
+        public JsonResult SignIn(User usuario)
         {
             //Cargo la variable respuesta que será devuelta mediante el uso de JSon. Es una instancia al Modelo
             //Response usado para devolver datos con JSon.
@@ -30,21 +36,44 @@ namespace MyWeb.Controllers
             //Vuelvo a preguntar si el Formulario se encuentra validado.
             if (ModelState.IsValid)
             {
-                //Acá es donde tengo que buscar si el usuario ingresado existe en la BD.
-                if(usuario.Email=="crismanavella@gmail.com" && usuario.Password == "Mana5692")
+                try
                 {
-                    Usuario usuarioToSend = new Usuario{
-                        Id = 1,
-                        Nombre = "Cristian",
-                        Apellido = "Manavella",
-                        Email = usuario.Email,
-                        Password = usuario.Password
-                    };
+                    using (mandrakeEntities3 db = new mandrakeEntities3())
+                    {
+                        var lst = from d in db.Users where d.Email == usuario.Email &&
+                                  d.Password == usuario.Password && d.IdState == 1
+                                  select d;
 
-                    respuesta.Valida = true;
-                    respuesta.Modelo = usuarioToSend;
-                    respuesta.Error = "";
+                        if (lst.Count() > 0)
+                        {
+                            usuario = lst.First();
+                            Session["User"] = usuario;
+                            respuesta.Valida = true;
+                            respuesta.Error = "";
+                        }
+                    }
+                }catch(Exception ex)
+                {
+                    respuesta.Valida = false;
+                    respuesta.Modelo = null;
+                    respuesta.Error = "Error: " + ex.Message;
                 }
+
+                //Acá es donde tengo que buscar si el usuario ingresado existe en la BD.
+                //if(usuario.Email=="crismanavella@gmail.com" && usuario.Password == "Mana5692")
+                //{
+                //    Usuario usuarioToSend = new Usuario{
+                //        Id = 1,
+                //        Nombre = "Cristian",
+                //        Apellido = "Manavella",
+                //        Email = usuario.Email,
+                //        Password = usuario.Password
+                //    };
+
+                //    respuesta.Valida = true;
+                //    respuesta.Modelo = usuarioToSend;
+                //    respuesta.Error = "";
+                //}
             }
 
             //Retorno el JSon.

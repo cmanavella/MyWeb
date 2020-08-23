@@ -11,7 +11,7 @@
 <body>
     @* Cargo el modelo Usuario que se va a utilizar en esta vista. Con él ya se encuentran las validaciones de 
         sus campos.*@
-    @model MyWeb.Models.Usuario
+    @model MyWeb.Models.User
     <!--Seteo la ventana Modal para Inicio de Sesión-->
     <div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -19,7 +19,7 @@
                 <div class="modal-header-cm">
                     <h5 class="modal-title-cm">Inicia Sesión</h5>
                 </div>
-                @using (Html.BeginForm("ValidarUsuario", "Usuarios", FormMethod.Post, new { id= "frmSignIn" })){
+                @using (Html.BeginForm("SignIn", "Usuarios", FormMethod.Post, new { id= "frmSignIn" })){
                     <div class="modal-body">
                         @Html.AntiForgeryToken()
                         <div class="form-group">
@@ -58,7 +58,14 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    @if (Session["User"] == null)
+                    {
+                        <li>@Html.ActionLink("No iniciado", "Contact", "Home")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Iniciado", "Contact", "Home")</li>
+                    }
                 </ul>
             </div>
         </div>

@@ -69,8 +69,15 @@ textarea {
 }
 
 .btn-primary-green {
-    color: #fff;
+    color: azure;
     background-color: #2eb82e;
+    border-color: #2e6da4;
+    margin-right: 5px;
+}
+
+.btn-primary-red {
+    color: azure;
+    background-color: #e60000;
     border-color: #2e6da4;
     margin-right: 5px;
 }

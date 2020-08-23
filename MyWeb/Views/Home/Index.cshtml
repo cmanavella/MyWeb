@@ -7,17 +7,32 @@
     <p class="lead">Servicio técnico de PC's y Notebooks.</p>
     <p>Conocenos</p>
 </div>
-<div class="row">
-    <div class="col-sm-12 col-center">
-        <p>
-            Debes iniciar sesión en nuestro sitio. Si aun no eres usuario, por favor regístrate. Es fácil y totalmente gratuito.
-        </p>
-        <p>
-            <button type="button" class="btn btn-primary" id="registro">Registrate</button>
-            <button type="button" class="btn btn-primary-green" data-toggle="modal" data-target="#modalSignIn">Inicia Sesión</button>
-        </p>
+
+@if (Session["User"] == null)
+{
+    <div class="row">
+        <div class="col-sm-12 col-center">
+            <p>
+                Debes iniciar sesión en nuestro sitio. Si aun no eres usuario, por favor regístrate. Es fácil y totalmente gratuito.
+            </p>
+            <p>
+                <button type="button" class="btn btn-primary" id="registro">Registrate</button>
+                <button type="button" class="btn btn-primary-green" data-toggle="modal" data-target="#modalSignIn">Inicia Sesión</button>
+            </p>
+        </div>
     </div>
-</div>
+}
+else
+{
+    <div class="row">
+        <div class="col-sm-12 col-center">
+           <p>
+                <button type="button" class="btn btn-primary-red" id="btnSignOut">Cerrar Sesión</button>
+            </p>
+        </div>
+    </div>
+}
+
 <div class="row">
     <div class="col-sm-12 col-center">
         <h1>¿Cómo funcionamos?</h1>

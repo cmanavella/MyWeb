@@ -13,9 +13,7 @@
                 url: form.attr('action'),
                 success: function (r) {
                     if (r.Valida) { //Como en el controlador hay otra validación más, es necesario saber si fue exitosa.
-                        alert('Bienvenido ' + r.Modelo.Nombre + ' ' + r.Modelo.Apellido + ' a nuestro sitio.');
-                        $('#Email').val('');
-                        $('#Password').val('');
+                        location.reload(true);
                     } else {
                         $('#signin-validation').text(r.Error).show();
                     }
@@ -26,5 +24,9 @@
             });
         }
         return false; //Esto lo hago para que la página no se actualice.
+    });
+
+    $('#btnSignOut').click(function () {
+        location.href = '/Usuarios/SignOut';
     });
 });

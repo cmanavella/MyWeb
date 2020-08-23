@@ -170,3 +170,7 @@ C:\Desarrollos\MyWeb\MyWeb\obj\Debug\MyWeb.csproj.CoreCompileInputs.cache
 C:\Desarrollos\MyWeb\MyWeb\obj\Debug\MyWeb.csproj.CopyComplete
 C:\Desarrollos\MyWeb\MyWeb\obj\Debug\MyWeb.dll
 C:\Desarrollos\MyWeb\MyWeb\obj\Debug\MyWeb.pdb
+I:\Desarrollos\MyWeb\MyWeb\bin\EntityFramework.dll
+I:\Desarrollos\MyWeb\MyWeb\bin\EntityFramework.SqlServer.dll
+I:\Desarrollos\MyWeb\MyWeb\bin\EntityFramework.xml
+I:\Desarrollos\MyWeb\MyWeb\bin\EntityFramework.SqlServer.xml

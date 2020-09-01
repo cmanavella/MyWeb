@@ -25,37 +25,53 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-3">
-        <h2>Paso 1</h2>
-        <h4>Indícanos qué te sucede</h4>
-        <p>Rellena un breve formulario con tu problema.</p>
-        <p>No importa que no sepas qué son y dónde buscar los datos que te pedimos, pero mientras más sepamos mejor.</p>
+    <div class="col-sm-12 col-center">
+        <div id="sandbox-container"></div>
     </div>
-    <div class="col-md-3">
-        <h2>Paso 2</h2>
-        <h4>Nos comunicamos con vos</h4>
-        <p>Ni bien recibamos tu solicitud nos estaremos comunicando, ya sea por teléfono o por e-mail, con vos.</p>
-        <p>
-            Muchas reparaciones son problemas de configuración y no es necesario que nos traigas tu dispositivo. Podemos solucionarlo
-            de manera remota.
-        </p>
+
+        @*<div class="col-md-3">
+                <h2>Paso 1</h2>
+                <h4>Indícanos qué te sucede</h4>
+                <p>Rellena un breve formulario con tu problema.</p>
+                <p>No importa que no sepas qué son y dónde buscar los datos que te pedimos, pero mientras más sepamos mejor.</p>
+            </div>
+            <div class="col-md-3">
+                <h2>Paso 2</h2>
+                <h4>Nos comunicamos con vos</h4>
+                <p>Ni bien recibamos tu solicitud nos estaremos comunicando, ya sea por teléfono o por e-mail, con vos.</p>
+                <p>
+                    Muchas reparaciones son problemas de configuración y no es necesario que nos traigas tu dispositivo. Podemos solucionarlo
+                    de manera remota.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <h2>Paso 3</h2>
+                <h4>Recibimos tu dispositivo</h4>
+                <p>
+                    Si la gravedad de tu problema no se puede solucionar de manera remota, te solicitaremos que traigas tu dispositivo así lo
+                    intentamos reparar. Lamentablemente no todo es reparable, por lo que si esto es así te diremos y toda tu consulta será sin
+                    costo alguno.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <h2>Paso 4</h2>
+                <h4>Lleva tu dispositivo</h4>
+                <p>
+                    Si la reparación se pudo realizar, retira tu dispositivo cuando te avisemos. Recibirás una notificación vía e-mail cuando el
+                    dispositivo esté listo y el monto de la operación. Mientras tanto puedes seguir el proceso en nuestra web.
+                </p>
+                <p>De momento solo cobramos en efectivo.</p>
+            </div>*@
     </div>
-    <div class="col-md-3">
-        <h2>Paso 3</h2>
-        <h4>Recibimos tu dispositivo</h4>
-        <p>
-            Si la gravedad de tu problema no se puede solucionar de manera remota, te solicitaremos que traigas tu dispositivo así lo
-            intentamos reparar. Lamentablemente no todo es reparable, por lo que si esto es así te diremos y toda tu consulta será sin
-            costo alguno.
-        </p>
-    </div>
-    <div class="col-md-3">
-        <h2>Paso 4</h2>
-        <h4>Lleva tu dispositivo</h4>
-        <p>
-            Si la reparación se pudo realizar, retira tu dispositivo cuando te avisemos. Recibirás una notificación vía e-mail cuando el
-            dispositivo esté listo y el monto de la operación. Mientras tanto puedes seguir el proceso en nuestra web.
-        </p>
-        <p>De momento solo cobramos en efectivo.</p>
-    </div>
-</div>
+
+<script type="text/javascript">
+    $('#sandbox-container div').datepicker({
+        format: "dd/mm/yyyy",
+        weekStart: 0,
+        startDate: "01/09/2020",
+        language: "es",
+        daysOfWeekHighlighted: "0,6",
+        todayHighlight: true,
+        datesDisabled: ['09/06/2020', '09/21/2020']
+    });
+</script>

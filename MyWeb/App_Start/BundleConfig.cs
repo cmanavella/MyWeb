@@ -20,13 +20,13 @@ namespace MyWeb
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap-*"));
+                      "~/Scripts/bootstrap*"));
 
             bundles.Add(new ScriptBundle("~/bundles/funciones").Include(
                       "~/Scripts/jfunctions.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-*",
+                      "~/Content/bootstrap*",
                       "~/Content/site.css"));
         }
     }

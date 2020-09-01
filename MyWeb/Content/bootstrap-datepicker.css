@@ -113,7 +113,7 @@
   cursor: default;
 }
 .datepicker table tr td.highlighted {
-  background: #d9edf7;
+  background: #ffbb99;
   border-radius: 0;
 }
 .datepicker table tr td.today,

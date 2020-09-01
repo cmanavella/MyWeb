@@ -7,6 +7,9 @@
     <title>@ViewBag.Title - Mandrake</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/bootstrap-datepicker.es.min.js"></script>
 </head>
 <body>
     @model MyWeb.Models.Usuario
@@ -67,8 +70,7 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+   
     @Scripts.Render("~/bundles/funciones")
     @RenderSection("scripts", required: false)
 </body>

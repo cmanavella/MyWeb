@@ -98,10 +98,72 @@ textarea {
     width: 300px;
 }
 
+.datepicker table {
+    background-color: #eb8223;
+    border-top: 0;
+    border-right: 3px solid;
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+    border-color: #eb8223;
+}
 
-.datepicker table tr td.highlighted {
-    color: #000;
-    background-color: #d9edf7;
-    border-color: #85c5e5;
+.datepicker table thead tr th.prev:hover,
+.datepicker table thead tr th.datepicker-switch:hover,
+.datepicker table thead tr th.next:hover,
+.datepicker table tbody tr td span.month:hover,
+.datepicker table tbody tr td span.year:hover 
+{
+    background-color: #fbe5d0;
+}
+
+.datepicker table tbody tr td span.month.focused,
+.datepicker table tbody tr td span.year.focused {
+    background-color: #f6cba2;
+}
+
+.datepicker table tbody tr td.day {
+    background-color: #fff;
     border-radius: 0;
 }
+
+.datepicker table tbody tr td.highlighted.day {
+    color: #000;
+    background-color: #fbe5d0;
+    border-color: #fbe5d0;
+    border-radius: 0;
+}
+
+    .datepicker table tbody tr td.highlighted:hover,
+    .datepicker table tbody tr td.day:hover,
+    .datepicker table tbody tr td.today.day:hover {
+        color: #000;
+        background-color: #f6cba2;
+        border-color: #eb9c47;
+    }
+
+.datepicker table tbody tr td.old.disabled.highlighted.day:hover,
+.datepicker table tbody tr td.new.highlighted.day:hover,
+.datepicker table tbody tr td.old.disabled.day:hover,
+.datepicker table tbody tr td.new.day:hover {
+    color: #777;
+}
+
+.datepicker table tbody tr td.old.disabled.highlighted.day,
+.datepicker table tbody tr td.new.highlighted.day {
+    color: #777;
+}
+
+.datepicker table tbody tr td.old.disabled.highlighted.day:hover {
+    background-color: #f6cba2;
+}
+
+    .datepicker table tbody tr td.today {
+        background-color: #f2b073;
+        background-image: none;
+    }
+
+    .datepicker table tbody tr td.active.day,
+    .datepicker table tbody tr td.active.day:hover{
+        background-color: #eb8223;
+        background-image: none;
+    }

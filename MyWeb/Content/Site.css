@@ -101,7 +101,7 @@ textarea {
 
 .datepicker table tr td.highlighted {
     color: #000;
-    background-color: #d9edf7 !important;
+    background-color: #d9edf7;
     border-color: #85c5e5;
     border-radius: 0;
 }
